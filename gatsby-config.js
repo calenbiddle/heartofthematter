@@ -76,7 +76,15 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    `gatsby-plugin-netlify-cms`
+    `gatsby-plugin-netlify-cms`,
+    {
+      resolve: '@vojtaholik/gatsby-theme-simplecast',
+      options: {
+        // podcastId: PODCAST_ID, // theme uses mockup data if no podcastId provided
+        simplecastApiSecret: SIMPLECAST_API_SECRET, 
+        markdownPath: 'content/episodes',
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
