@@ -13,19 +13,25 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-theme-portfolio",
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
+        contentPath: `${__dirname}/content` // the path to your markdown files
+      }
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     path: `${__dirname}/content`,
+    //     name: `blog`,
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     path: `${__dirname}/content/assets`,
+    //     name: `assets`,
+    //   },
+    // },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -81,3 +87,5 @@ module.exports = {
     // `gatsby-plugin-offline`,
   ],
 }
+
+https://app.netlify.com/start/deploy?repository=https://github.com/AustinGreen/gatsby-starter-netlify-cms&stack=cms
