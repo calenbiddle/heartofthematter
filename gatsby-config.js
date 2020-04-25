@@ -5,7 +5,7 @@ module.exports = {
     siteUrl: `https://novela.narative.co`,
     description: `This is my description that will be used in the meta tags and important for search results`,
     hero: {
-      heading: `Welcome to the Heart of the Matter, a series in which we share conversations with inspiring and interesting people and dive into the core issues or motivations behind their work, their lives, and their worldview. Coming to you from Austin, Texas with your hosts Bryan Davis and Jay Kannaiyan.`,
+      heading: `Welcome to the Heart of the Matter`,
       maxWidth: 652,
     },
     social: [
