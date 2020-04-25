@@ -4,16 +4,24 @@ require(`dotenv`).config({
 
 module.exports = {
   siteMetadata: {
-    siteTitleAlt: `Minimal Blog - Gatsby Theme`,
+    siteTitle: `Heart of the Matter`,
+    siteTitleAlt: `Heart of the Matter`,
+    siteHeadline: `A new podcast with inspiring and interesting guests`,
+    // siteUrl: `https://minimal-blog.lekoarts.de`,
+    siteDescription: ``,
+    siteLanguage: `en`,
+    siteImage: `/logo-hom.jpg`, // inside static
   },
   plugins: [
     {
       resolve: `@lekoarts/gatsby-theme-minimal-blog`,
       options: {
+        blogPath: `/episodes`,
+        formatString: `MM.DD.YYYY`,
         navigation: [
           {
-            title: `Blog`,
-            slug: `/blog`,
+            title: `Episodes`,
+            slug: `/episodes`,
           },
           {
             title: `About`,
@@ -23,11 +31,11 @@ module.exports = {
         externalLinks: [
           {
             name: `Twitter`,
-            url: `https://twitter.com/lekoarts_de`,
+            url: `https://twitter.com/jamminglobal`,
           },
           {
             name: `Instagram`,
-            url: `https://www.instagram.com/lekoarts.de/`,
+            url: `https://www.instagram.com/jamminglobal/`,
           },
         ],
       },
