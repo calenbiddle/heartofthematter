@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { navigateTo } from 'gatsby-link'
 import { 
   Button, 
   Box,
@@ -7,8 +8,38 @@ import {
   Textarea,
 } from '../../../node_modules/@theme-ui/components'
 
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
+
 class Form extends Component {
-// const Form = () => {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const form = e.target;
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        ...this.state
+      })
+    })
+      .then(() => navigateTo(form.getAttribute("action")))
+      .catch(error => alert(error));
+  };
+
+
   render () {
     return (
       // <form 
@@ -48,12 +79,18 @@ class Form extends Component {
       //       Send
       //     </Button>
       // </form>
-      <form name="contact" method="POST" data-netlify-recaptcha="true" data-netlify="true">
+      <form 
+      name="contact" 
+      method="POST" 
+      data-netlify-recaptcha="true" 
+      data-netlify="true" 
+      action="/"
+      onSubmit={this.handleSubmit}>
       <p>
-        <label>Email: <input type="text" name="name" /></label>
+        <label>Email: <input type="text" name="name" onChange={this.handleChange} /></label>
       </p>
       <p>
-        <label>Message: <textarea name="message"></textarea></label>
+        <label>Message: <textarea name="message" onChange={this.handleChange}></textarea></label>
       </p>
       <div data-netlify-recaptcha="true"></div>
       <p>

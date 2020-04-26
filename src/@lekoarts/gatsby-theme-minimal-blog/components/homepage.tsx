@@ -11,6 +11,7 @@ import Listing from "../../../../node_modules/@lekoarts/gatsby-theme-minimal-blo
 import List from "../../../../node_modules/@lekoarts/gatsby-theme-minimal-blog/src/components/list"
 import useMinimalBlogConfig from "../../../../node_modules/@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-minimal-blog-config"
 import replaceSlashes from "../../../../node_modules/@lekoarts/gatsby-theme-minimal-blog/src/utils/replaceSlashes"
+import MailChimp from "./MailChimp"
 
 type PostsProps = {
   posts: {
@@ -47,8 +48,6 @@ const Homepage = ({ posts }: PostsProps) => {
           // color: 'tomato'
         }}
       >
-        
-        
         <Hero />
       </section>
       <Title text="Latest Episodes">
@@ -61,6 +60,10 @@ const Homepage = ({ posts }: PostsProps) => {
           mb: [4, 5, 6] 
         }}
       />
+      <Title text="Subscribe"/>
+
+      <MailChimp />
+
       <List>
         <Bottom />
       </List>
