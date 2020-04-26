@@ -1,9 +1,9 @@
 {
   "private": true,
-  "name": "minimal-blog",
-  "description": "Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and line highlighting.",
+  "name": "heart-of-the-matter",
+  "description": "Website for the Heart of the Matter podcast",
   "version": "1.0.17",
-  "author": "LekoArts <hello@lekoarts.de>",
+  "author": "Jay Kannaiyan <hi@jamminglobal.com>",
   "license": "MIT",
   "starter-name": "gatsby-starter-minimal-blog",
   "scripts": {
@@ -20,6 +20,7 @@
     "gatsby": "^2.13.3",
     "gatsby-link": "^2.3.5",
     "gatsby-plugin-google-analytics": "^2.1.4",
+    "gatsby-plugin-mailchimp": "^5.1.2",
     "gatsby-plugin-manifest": "^2.2.3",
     "gatsby-plugin-netlify": "^2.1.3",
     "gatsby-plugin-offline": "^2.2.4",
