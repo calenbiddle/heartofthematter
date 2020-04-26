@@ -11,11 +11,13 @@ class Form extends Component {
 // const Form = () => {
   render () {
     return (
-      <form name="contact" method="POST" data-netlify="true">
-        <Box
-          as='form'
-          onSubmit={e => e.preventDefault()}
-        >
+      <form 
+        name="contact" 
+        method="POST" 
+        data-netlify="true" 
+        data-netlify-recaptcha="true"
+        action="/">
+        
           <Label htmlFor='name'>Your name</Label>
           <Input
             type='text'
@@ -37,12 +39,14 @@ class Form extends Component {
             mb={3}
           />
 
+          <div data-netlify-recaptcha="true"></div>
+
           <Button
             type='submit'
+            onClick={e => e.preventDefault()}
           >
             Send
           </Button>
-        </Box>
       </form>
 
     )
