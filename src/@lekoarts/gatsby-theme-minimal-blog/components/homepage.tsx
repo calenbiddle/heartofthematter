@@ -60,13 +60,17 @@ const Homepage = ({ posts }: PostsProps) => {
           mb: [4, 5, 6] 
         }}
       />
-      <Title text="Subscribe"/>
+      <Title text="Newsletter Signup" />
+        <section sx={{
+          mb: [3, 4, 5] 
+        }}>
+          <p>If you'd like to be notified when new episodes are released or other news about the Heart of the Matter podcast, please subscribe.</p>
+          <MailChimp />
+        </section>
 
-      <MailChimp />
-
-      <List>
+      {/* <List >
         <Bottom />
-      </List>
+      </List> */}
     </Layout>
   )
 }

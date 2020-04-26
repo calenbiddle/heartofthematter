@@ -8,11 +8,16 @@ module.exports = {
     siteTitleAlt: `Heart of the Matter`,
     siteHeadline: `A new podcast with inspiring and interesting guests`,
     // siteUrl: `https://minimal-blog.lekoarts.de`,
-    siteDescription: ``,
+    siteDescription: `Welcome to the Heart of the Matter, a series in which we share conversations with inspiring and interesting people and dive into the core issues or motivations behind their work, their lives, and their worldview. Coming to you from Austin, Texas with your hosts Bryan Davis and Jay Kannaiyan.`,
     siteLanguage: `en`,
-    siteImage: `/logo-hom.jpg`, // inside static
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+          endpoint: 'https://app.us8.list-manage.com/subscribe/post?u=f530d4e34940ff8b991a06b38&amp;id=2254846f7b',
+      },
+    },
     {
       resolve: `@lekoarts/gatsby-theme-minimal-blog`,
       options: {

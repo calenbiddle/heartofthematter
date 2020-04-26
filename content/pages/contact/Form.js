@@ -1,105 +1,79 @@
-import React, { Component } from "react"
-import { navigateTo } from 'gatsby-link'
+import React, { Component } from "react";
 import { 
   Button, 
-  Box,
   Label,
   Input,
   Textarea,
 } from '../../../node_modules/@theme-ui/components'
 
-function encode(data) {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-}
-
-class Form extends Component {
+export default class Form extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.submitForm = this.submitForm.bind(this);
+    this.state = {
+      status: ""
+    };
   }
-  
-  handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
 
-  handleSubmit = e => {
-    e.preventDefault();
-    const form = e.target;
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": form.getAttribute("name"),
-        ...this.state
-      })
-    })
-      .then(() => navigateTo(form.getAttribute("action")))
-      .catch(error => alert(error));
-  };
-
-
-  render () {
+  render() {
+    const { status } = this.state;
     return (
-      // <form 
-      //   name="contact" 
-      //   method="POST" 
-      //   data-netlify="true" 
-      //   data-netlify-recaptcha="true"
-      //   action="/">
-        
-      //     <Label htmlFor='name'>Your name</Label>
-      //     <Input
-      //       type='text'
-      //       name='name'
-      //       mb={3}
-      //     />
+      <form
+        onSubmit={this.submitForm}
+        action="https://formspree.io/xoqkaqyn"
+        method="POST"
+      >
+        <Label htmlFor='name'>Your name</Label>
+        <Input
+          type='text'
+          name='name'
+          mb={3}
+        />
 
-      //     <Label htmlFor='email'>Your email</Label>
-      //     <Input
-      //       type='email'
-      //       name='email'
-      //       mb={3}
-      //     />
+        <Label htmlFor='email'>Your email</Label>
+        <Input
+          type='email'
+          name='email'
+          mb={3}
+        />
 
-      //     <Label htmlFor='message'>Your message</Label>
-      //     <Textarea
-      //       name='message'
-      //       rows='6'
-      //       mb={3}
-      //     />
+        <Label htmlFor='message'>Your message</Label>
+        <Textarea
+          name='message'
+          rows='6'
+          mb={3}
+        />
 
-      //     <div data-netlify-recaptcha="true"></div>
+        {status === "SUCCESS" 
+          ? <p>Thanks. Your message was sent.</p> 
+          : <Button
+              type='submit'
+            >
+              Send
+            </Button>
+        }
+        {status === "ERROR" && <p>Ooops! There was an error.</p>}
+      </form>
+    );
+  }
 
-      //     <Button
-      //       type='submit'
-      //       onClick={e => e.preventDefault()}
-      //     >
-      //       Send
-      //     </Button>
-      // </form>
-      <form 
-      name="contact" 
-      method="POST" 
-      data-netlify-recaptcha="true" 
-      data-netlify="true" 
-      action="/"
-      onSubmit={this.handleSubmit}>
-      <p>
-        <label>Email: <input type="text" name="name" onChange={this.handleChange} /></label>
-      </p>
-      <p>
-        <label>Message: <textarea name="message" onChange={this.handleChange}></textarea></label>
-      </p>
-      <div data-netlify-recaptcha="true"></div>
-      <p>
-        <button type="submit">Send</button>
-      </p>
-    </form>
-
-    )
+  submitForm(ev) {
+    ev.preventDefault();
+    const form = ev.target;
+    const data = new FormData(form);
+    console.log('data', data)
+    const xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.action);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        form.reset();
+        this.setState({ status: "SUCCESS" });
+      } else {
+        this.setState({ status: "ERROR" });
+      }
+    };
+    xhr.send(data);
   }
 }
-
-export default Form
