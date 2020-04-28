@@ -10,6 +10,7 @@ module.exports = {
     siteUrl: `https://heartofthemattershow.com`,
     siteDescription: `Welcome to the Heart of the Matter, a series in which we share conversations with inspiring and interesting people and dive into the core issues or motivations behind their work, their lives, and their worldview. Coming to you from Austin and the Bay Area with your hosts Bryan Davis and Jay Kannaiyan.`,
     siteLanguage: `en`,
+    siteImage: `/logo-hom.jpg`,
   },
   plugins: [
     {
@@ -59,9 +60,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `minimal-blog - @lekoarts/gatsby-theme-minimal-blog`,
-        short_name: `minimal-blog`,
-        description: `Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and code highlighting.`,
+        name: `Heart of the Matter`,
+        short_name: `hom-website`,
+        description: `Welcome to the Heart of the Matter, a series in which we share conversations with inspiring and interesting people and dive into the core issues or motivations behind their work, their lives, and their worldview. Coming to you from Austin and the Bay Area with your hosts Bryan Davis and Jay Kannaiyan.`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#6B46C1`,
