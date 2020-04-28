@@ -7,8 +7,8 @@ module.exports = {
     siteTitle: `Heart of the Matter`,
     siteTitleAlt: `Heart of the Matter`,
     siteHeadline: `A new podcast with inspiring and interesting guests`,
-    // siteUrl: `https://minimal-blog.lekoarts.de`,
-    siteDescription: `Welcome to the Heart of the Matter, a series in which we share conversations with inspiring and interesting people and dive into the core issues or motivations behind their work, their lives, and their worldview. Coming to you from Austin, Texas with your hosts Bryan Davis and Jay Kannaiyan.`,
+    siteUrl: `https://heartofthemattershow.com`,
+    siteDescription: `Welcome to the Heart of the Matter, a series in which we share conversations with inspiring and interesting people and dive into the core issues or motivations behind their work, their lives, and their worldview. Coming to you from Austin and the Bay Area with your hosts Bryan Davis and Jay Kannaiyan.`,
     siteLanguage: `en`,
   },
   plugins: [
@@ -40,11 +40,11 @@ module.exports = {
         externalLinks: [
           {
             name: `Twitter`,
-            url: `https://twitter.com/jamminglobal`,
+            url: `https://twitter.com/heartmattershow`,
           },
           {
             name: `Instagram`,
-            url: `https://www.instagram.com/jamminglobal/`,
+            url: `https://www.instagram.com/heartmattershow/`,
           },
         ],
       },
