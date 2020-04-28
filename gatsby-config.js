@@ -4,13 +4,14 @@ require(`dotenv`).config({
 
 module.exports = {
   siteMetadata: {
-    siteTitle: `Heart of the Matter`,
-    siteTitleAlt: `Heart of the Matter`,
+    siteTitle: `Heart of the Matter Show with Bryan Davis and Jay Kannaiyan`,
+    siteTitleAlt: `Heart of the Matter Show with Bryan Davis and Jay Kannaiyan`,
+    siteName: `Heart of the Matter Show with Bryan Davis and Jay Kannaiyan`,
     siteHeadline: `A new podcast with inspiring and interesting guests`,
     siteUrl: `https://heartofthemattershow.com`,
     siteDescription: `Welcome to the Heart of the Matter, a series in which we share conversations with inspiring and interesting people and dive into the core issues or motivations behind their work, their lives, and their worldview. Coming to you from Austin and the Bay Area with your hosts Bryan Davis and Jay Kannaiyan.`,
     siteLanguage: `en`,
-    siteImage: `/logo-hom.jpg`,
+    siteImage: `/logo-hom.jpg`, 
   },
   plugins: [
     {
@@ -60,7 +61,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Heart of the Matter`,
+        name: `Heart of the Matter Show with Bryan Davis and Jay Kannaiyan`,
         short_name: `hom-website`,
         description: `Welcome to the Heart of the Matter, a series in which we share conversations with inspiring and interesting people and dive into the core issues or motivations behind their work, their lives, and their worldview. Coming to you from Austin and the Bay Area with your hosts Bryan Davis and Jay Kannaiyan.`,
         start_url: `/`,
