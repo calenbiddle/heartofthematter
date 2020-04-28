@@ -4,7 +4,7 @@ require(`dotenv`).config({
 
 module.exports = {
   siteMetadata: {
-    siteTitle: `Heart of the Matter Show with Bryan Davis and Jay Kannaiyan`,
+    siteTitle: `Heart of the Matter`,
     siteTitleAlt: `Heart of the Matter Show with Bryan Davis and Jay Kannaiyan`,
     siteName: `Heart of the Matter Show with Bryan Davis and Jay Kannaiyan`,
     siteHeadline: `A new podcast with inspiring and interesting guests`,
