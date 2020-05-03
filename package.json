@@ -9,6 +9,7 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",
+    "dev2": "del-cli .cache public && gatsby develop",
     "develop:cypress": "cross-env CYPRESS_SUPPORT=y yarn develop",
     "build:cypress": "cross-env CYPRESS_SUPPORT=y yarn build",
     "start": "gatsby develop",
@@ -30,6 +31,7 @@
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
+    "del-cli": "^3.0.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.8"
   }
 }
