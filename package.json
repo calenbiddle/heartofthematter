@@ -8,7 +8,8 @@
   "starter-name": "gatsby-starter-minimal-blog",
   "scripts": {
     "build": "gatsby build",
-    "dev": "gatsby develop",
+    "dev-old": "gatsby develop",
+    "dev": "rimraf .cache public && gatsby develop",
     "develop:cypress": "cross-env CYPRESS_SUPPORT=y yarn develop",
     "build:cypress": "cross-env CYPRESS_SUPPORT=y yarn build",
     "start": "gatsby develop",
@@ -26,7 +27,8 @@
     "gatsby-plugin-offline": "^2.2.4",
     "gatsby-plugin-sitemap": "^2.4.0",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "rimraf": "^3.0.2"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
